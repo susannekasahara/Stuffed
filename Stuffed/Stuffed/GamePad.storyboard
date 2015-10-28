@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z9Y-SU-d4U">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Game Pad Controller-->
+        <scene sceneID="NA4-8D-KI0">
+            <objects>
+                <viewController id="Z9Y-SU-d4U" customClass="GamePadController" customModule="Stuffed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dQo-Jl-g2n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uqd-Sc-KJ7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tdd-W0-RUg">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxQ-Pd-NGi">
+                                <rect key="frame" x="246" y="150" width="39" height="30"/>
+                                <state key="normal" title="Jump"/>
+                                <connections>
+                                    <action selector="Jump:" destination="Z9Y-SU-d4U" eventType="touchUpInside" id="nh5-lU-XLc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGF-1T-vLN">
+                                <rect key="frame" x="437" y="186" width="30" height="30"/>
+                                <state key="normal" title="left"/>
+                                <connections>
+                                    <action selector="left:" destination="Z9Y-SU-d4U" eventType="touchUpInside" id="xLD-zX-Uha"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBG-8p-gYv">
+                                <rect key="frame" x="290" y="270" width="30" height="30"/>
+                                <state key="normal" title="fire"/>
+                                <connections>
+                                    <action selector="Fire:" destination="Z9Y-SU-d4U" eventType="touchUpInside" id="y7c-tU-5Rd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmA-eO-QVY">
+                                <rect key="frame" x="284" y="178" width="36" height="30"/>
+                                <state key="normal" title="Right"/>
+                                <connections>
+                                    <action selector="right:" destination="Z9Y-SU-d4U" eventType="touchUpInside" id="SAH-lK-RO9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dgI-9N-aYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="437" y="665"/>
+        </scene>
+    </scenes>
+</document>
