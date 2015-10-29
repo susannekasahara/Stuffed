@@ -42,7 +42,13 @@ MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
             
         ]
         
-        sendInfo(info)
+       // sendInfo(info)
+        
+        //let gameData = GameData(
+        
+        let gameData = GameData(action: .Move, direction: .Right)
+        
+        sendData(gameData)
     }
     @IBAction func Fire(sender: AnyObject) {
         
@@ -74,7 +80,7 @@ MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
         
         session = MCSession(peer: myPeerID)
         session.delegate = self
-        advertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: ["color":"black"], serviceType: "stuffed")
+        advertiser = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: ["color":"black"], serviceType: serviceType)
         
         
         advertiser.delegate = self
@@ -142,12 +148,29 @@ MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
     
     //// BUTTONS
 
-
+    
+    func sendData(gameData: GameData) {
+        
+        if let bID = boardID {
+            
+            do {
+                
+                try session.sendData(gameData.data, toPeers: [bID], withMode: .Reliable)
+                
+            } catch {
+                
+                print(error)
+            }
+            
+            
+        }
+    }
 
 
     func sendInfo(info: [String:String]) {
 
         //NS Keyed Archiver
+        
         
         if let data = try? NSJSONSerialization.dataWithJSONObject(info, options: .PrettyPrinted) {
             

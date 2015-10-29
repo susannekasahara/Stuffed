@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		823FFE5B1BE252C100548756 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823FFE5A1BE252C100548756 /* GameData.swift */; settings = {ASSET_TAGS = (); }; };
 		82DE16F21BDFB14D00302E06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DE16F11BDFB14D00302E06 /* AppDelegate.swift */; };
 		82DE16F41BDFB14D00302E06 /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DE16F31BDFB14D00302E06 /* GameBoardController.swift */; };
 		82DE16F71BDFB14D00302E06 /* GameBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DE16F51BDFB14D00302E06 /* GameBoard.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		823FFE5A1BE252C100548756 /* GameData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		82DE16EE1BDFB14D00302E06 /* Stuffed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stuffed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82DE16F11BDFB14D00302E06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82DE16F31BDFB14D00302E06 /* GameBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				82DE170A1BDFFF3A00302E06 /* GameBoard.sks */,
 				82DE17031BDFB19E00302E06 /* GamePad.storyboard */,
 				82DE17061BDFB23E00302E06 /* GamePadController.swift */,
+				823FFE5A1BE252C100548756 /* GameData.swift */,
 				82DE17051BDFB20600302E06 /* Supportinf Files */,
 				82DE16EF1BDFB14D00302E06 /* Products */,
 			);
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82DE16F41BDFB14D00302E06 /* GameBoardController.swift in Sources */,
+				823FFE5B1BE252C100548756 /* GameData.swift in Sources */,
 				82DE17071BDFB23E00302E06 /* GamePadController.swift in Sources */,
 				82DE16F21BDFB14D00302E06 /* AppDelegate.swift in Sources */,
 				82DE170D1BE001AE00302E06 /* GameBoardScene.swift in Sources */,
@@ -315,6 +319,7 @@
 				82DE17021BDFB14D00302E06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

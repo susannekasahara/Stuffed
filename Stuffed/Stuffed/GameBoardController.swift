@@ -36,7 +36,7 @@ class GameBoardController: UIViewController, MCNearbyServiceBrowserDelegate, MCS
         
         
         session = MCSession(peer: myPeerID)
-        browser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: "stuffed")
+        browser = MCNearbyServiceBrowser(peer: myPeerID, serviceType: serviceType)
         browser.delegate = self
         browser.startBrowsingForPeers()
         session.delegate = self
@@ -112,6 +112,19 @@ class GameBoardController: UIViewController, MCNearbyServiceBrowserDelegate, MCS
         ////if data is received
         
         print(data)
+        
+        if let gameData = GameData.data(data) {
+            
+            if let action = gameData.action where .Move == action {
+                
+                scene?.movePixel(peerID.displayName, direction: gameData.direction!.rawValue)
+            }
+            
+        
+                
+            
+        
+    }
         
         if let info = try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String:String] {
         
