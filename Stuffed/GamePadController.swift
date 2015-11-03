@@ -18,61 +18,32 @@ MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
     
     var session: MCSession!
     var advertiser: MCNearbyServiceAdvertiser!
-    var myPeerID: MCPeerID = MCPeerID(displayName: "NINJA Biatch")
+    var myPeerID: MCPeerID = MCPeerID(displayName: "NINJA")
     
     var boardID: MCPeerID?
+    
 
     @IBAction func left(sender: AnyObject) {
         
-        let info = [
-            
-            "action" : "move",
-            "direction" : "left"
-            
-        ]
-        
-        sendInfo(info)
-    }
+        sendData(GameData(action: .Move, direction: .Left))    }
+   
+    
     @IBAction func right(sender: AnyObject) {
         
-        let info = [
-            
-            "action" : "move",
-            "direction" : "right"
-            
-        ]
         
-       // sendInfo(info)
         
-        //let gameData = GameData(
+        sendData(GameData(action: .Move, direction: .Right))
         
-        let gameData = GameData(action: .Move, direction: .Right)
-        
-        sendData(gameData)
+    
     }
     @IBAction func Fire(sender: AnyObject) {
-        
-        let info = [
-            
-            "action" : "fire"
-            
-        ]
-        
-        sendInfo(info)
+       sendData(GameData(action: .Fire))
+       
     }
     @IBAction func Jump(sender: AnyObject) {
         
-        let info = [
+        sendData(GameData(action: .Jump))
         
-            "action" : "jump"
-            
-            
-            
-            ]
-        
-        sendInfo(info)
-        
-        print("Jump")
         
     }
     override func viewDidLoad() {
@@ -166,31 +137,5 @@ MCNearbyServiceAdvertiserDelegate, MCSessionDelegate {
         }
     }
 
-
-    func sendInfo(info: [String:String]) {
-
-        //NS Keyed Archiver
-        
-        
-        if let data = try? NSJSONSerialization.dataWithJSONObject(info, options: .PrettyPrinted) {
-            
-            if let bID = boardID {
-                
-                do {
-                
-                 try session.sendData(data, toPeers: [bID], withMode: .Reliable)
-                    
-                } catch {
-                    
-                    print(error)
-                }
-
-        //let data = NSKeyedArchiver.archivedDataWithRootObject(info)
-
-            }
-            
-        }
-    
-    }
-
 }
+   

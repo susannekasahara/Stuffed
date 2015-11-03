@@ -114,20 +114,14 @@ class GameBoardScene: SKScene {
         
         
     }
-    func movePixel(name: DisplayName, direction: String) {
+    func movePixel(name: DisplayName, direction: PlayerDirection) {
         
        let pixel = playerPixels[name]
+    
         
+        pixel?.physicsBody?.applyForce(CGVector(dx: direction.dValue * 50, dy: 0))
         
-        //let offsetX = direction == "right" ? 50 : direction == "left" ? -50 : 0
-
-        let d = PlayerDirection(rawValue: direction)
-        
-        let offsetX = (d?.dValue ?? 0) * 50
-        
-        pixel?.physicsBody?.applyForce(CGVector(dx: offsetX, dy: 0))
-        
-        currentDirections[name] = d
+        currentDirections[name] = direction
     }
     
     func jumpPixel(name: DisplayName) {
